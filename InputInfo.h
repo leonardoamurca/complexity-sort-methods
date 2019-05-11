@@ -7,7 +7,7 @@
 class InputInfo {
 
   public:
-    InputInfo();
+    InputInfo() { };
     string getArrayType();
     int getArraySize();
     string getSortMethod();
@@ -21,11 +21,11 @@ class InputInfo {
   friend class SortMethods;
 };
 
-InputInfo::InputInfo() {
-  sortMethod = "";
-  arraySize = 0;
-  arrayType = "";
-}
+// InputInfo::InputInfo() {
+//   sortMethod = getSortMethod();
+//   arraySize = getArraySize();
+//   arrayType = getArrayType();
+// }
 
 string InputInfo::getArrayType() {
   return "OrdC";
@@ -40,8 +40,8 @@ string InputInfo::getSortMethod() {
 }
 
 int *InputInfo::generateData() {
-  arraySize = getArraySize();
-  arrayType = getArrayType();
+   arraySize = getArraySize();
+   arrayType = getArrayType();
   int *array = new int[arraySize];
 
   cout << arrayType << endl;

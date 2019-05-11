@@ -7,12 +7,21 @@ using namespace std;
 
 int main() {
   
-  // Testando métodos do InputType
+  // Entrada de dados
   InputInfo input;
+  int arraySize = input.getArraySize();
+  int *array = input.generateData();
+  string sortMethod = input.getSortMethod();
   
-    // Testando métodos do SortMethods
-  SortMethods s(input.generateData(), 5);
-  s.bubbleSort();
+  // Instanciando objeto para a escolha do método de ordenação a ser usado
+  SortMethods sort(array, arraySize);
+
+  if(sortMethod == "Bubble") {
+    sort.bubbleSort();
+  } else {
+    cout << "Errrou" << endl;
+  }
+  
 
 
   
