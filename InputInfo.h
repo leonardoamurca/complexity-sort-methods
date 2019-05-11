@@ -32,7 +32,7 @@ string InputInfo::getArrayType() {
 }
 
 int InputInfo::getArraySize() {
-  return 100;
+  return 5;
 }
 
 string InputInfo::getSortMethod() {
@@ -47,8 +47,10 @@ int *InputInfo::generateData() {
   cout << arrayType << endl;
   if (arrayType == "OrdC") {
     for(int i = 0; i < arraySize; i++) {
-      array[i] = 0;
+      array[i] = rand()/100000000;
+      cout << array[i] << " ";
     }
+    cout << endl;
   } else if (arrayType == "OrdD") {
     for(int i = 0; i < arraySize; i++) {
       array[i] = 1;

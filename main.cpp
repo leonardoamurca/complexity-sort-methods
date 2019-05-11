@@ -8,18 +8,10 @@ using namespace std;
 int main() {
   
   // Testando métodos do InputType
-  InputInfo i;
-  cout << i.getArrayType() << endl;
-  cout << i.getArraySize() << endl;
-  cout << i.getSortMethod() << endl;
-  cout << i.generateData()[0] << endl;
-
+  InputInfo input;
   
-
-  
-  // Testando métodos do SortMethods
-  int arr[] = {5, 2, 4, 1, 0, -1};
-  SortMethods s(arr, 6);
+    // Testando métodos do SortMethods
+  SortMethods s(input.generateData(), 5);
   s.bubbleSort();
 
 

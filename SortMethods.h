@@ -1,7 +1,9 @@
 #ifndef SORTMETHODS_H
 #define SORTMETHODS_H
-
+//#include "InputInfo.h"
 #include <iostream>
+
+
 using namespace std;
 
 class SortMethods {
@@ -13,6 +15,8 @@ class SortMethods {
   private:
     int *array;
     int arraySize;
+  
+  friend class InputInfo;
 };
 
 // Construtor
