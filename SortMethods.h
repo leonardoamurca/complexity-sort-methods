@@ -2,29 +2,30 @@
 #define SORTMETHODS_H
 
 #include <iostream>
-
 using namespace std;
 
 class SortMethods {
 
   public: 
-    SortMethods(int _unsortedArray[]);
+    SortMethods(int _array[], int _arraySize);
     void bubbleSort();
 
   private:
-    int *unsortedArray;
+    int *array;
     int arraySize;
 };
 
-// Constructor
-SortMethods::SortMethods(int _unsortedArray[]) {
-  unsortedArray = _unsortedArray;
+// Construtor
+SortMethods::SortMethods(int _array[], int _arraySize) {
+  array = _array;
+  arraySize = _arraySize;
 }
 
 void SortMethods::bubbleSort() {
-  for (int i = 0; i < 4; i++) {
-    cout << unsortedArray[i] << endl;
-  }
+  for (int i = 0; i < arraySize; i++) {
+    cout << array[i] << endl;
+  }  
+  cout << "Tamanho: " << arraySize << endl;
 }
 
 #endif
