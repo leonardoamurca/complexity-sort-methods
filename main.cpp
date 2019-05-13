@@ -1,29 +1,61 @@
 #include <iostream>
+#include <fstream>
 #include "SortMethods.h"
-#include "InputInfo.h"
-#include "SortMethods.h"
+//#include "InputInfo.h"
+//#include "SortMethods.h"
 
 using namespace std;
+
+// void readFile(InputInfo *input){
+//   string line;
+//   ifstream txtFile;
+//   txtFile.open("100.txt");
+
+//   int i = 0;
+//   int j = 0;
+//   while(getline(txtFile, line)) {
+//     cout << "i: " << i << endl;
+//     if(line == "" ) {
+//       i=0;
+//     }
+//     cout << "j:" << j << endl;
+//     if(i == 1) {
+//       if(j < 3) {
+//         input->arrayType = line; 
+//       }
+     
+//     }
+     
+//     if(i == 3) {
+//       if(j < 3) {
+//         input->arraySize = 100;
+//       }
+    
+//       j++;
+//     }
+
+//     if(i == 3) {
+//       if(j < 3) {
+//          input->sortMethod = line;
+//       }
+//     }
+//     j++;  
+//     i++;
+    
+//   }
+
+//   txtFile.close();
+// }
 
 int main() {
   
   // Entrada de dados
-  InputInfo input;
-  int arraySize = input.getArraySize();
-  int *array = input.generateData();
-  string sortMethod = input.getSortMethod();
-  
-  // Instanciando objeto para a escolha do método de ordenação a ser usado
-  SortMethods sort(array, arraySize);
+  // InputInfo *input = new InputInfo[3];
+  // int arrSize[3];
 
-  if(sortMethod == "Bubble") {
-    sort.bubbleSort();
-  } else {
-    cout << "Errrou" << endl;
-  }
-  
-
-
+  SortMethods sort;
+  sort.readFile();
+  sort.bubbleSort();
   
   return 0;
 }
