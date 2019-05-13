@@ -1,6 +1,6 @@
 #ifndef SORTMETHODS_H
 #define SORTMETHODS_H
-#include "InputInfo.h"
+#include "InputData.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -10,17 +10,19 @@ using namespace std;
 class SortMethods {
 
   public: 
+
     SortMethods() { };
-    void bubbleSort();
     void readFile();
+    void generateArray();
+    void bubbleSort();
     
 
   private:
+
     int *array;
     int arraySize;
-    InputInfo *input;
+    InputData *input;
   
-  friend class InputInfo;
 };
 
 
@@ -51,13 +53,23 @@ void SortMethods::readFile() {
   txtFile.close();
 }
 
+void SortMethods::generateArray() {
+  arraySize = input[0].arraySize;
+  int *arr = new int[arraySize];
+  
+  for(int i = 0; i < arraySize; i++) {
+    arr[i] = rand()/10000000;
+  }
+  array = arr;
+}
+
 void SortMethods::bubbleSort() {
   cout << "Bubble Sort!" << endl;
-  for (int i = 0; i < 3; i++) {
-    cout << input[i].arrayType << endl;
-    cout << input[i].arraySize << endl;
-    cout << input[i].sortMethod << endl;
+ 
+  for (int i = 0; i < arraySize; i++) {
+    cout << array[i] << " ";
   }
 }
+
 
 #endif
