@@ -77,22 +77,17 @@ void SortMethods::readFile() {
 }
 
 void SortMethods::generateArray() {
-  int arraySize = input[0].arraySize;
+  int arraySize = input[0].getArraySize();
   int *arr = new int[arraySize];
-  
-  for(int i = 0; i < arraySize; i++) {
-    arr[i] = rand()/10000000;
-  }
-  input[0].array = arr;
+
+  input->setArray(arr, arraySize);
 }
 
 void SortMethods::bubbleSort() {
   cout << "Bubble Sort!" << endl;
 
-  for (int i = 0; i < input[0].getArraySize(); i++) {
-    cout << input[0].array[i] << " ";
-  }
- 
+  input[0].printArray();
+  
 }
 
 
