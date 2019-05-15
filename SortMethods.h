@@ -13,7 +13,7 @@ class SortMethods {
   public: 
 
     SortMethods() { };
-    void readFile();
+    void readFile(string fileName);
     void generateArray(int i, int size, string type);
     void bubbleSort();
     void sort();
@@ -48,12 +48,12 @@ void SortMethods::setQtdOfSamples() {
 }
 
 
-void SortMethods::readFile() {
+void SortMethods::readFile(string fileName) {
   setQtdOfSamples();
   InputData *inputAux = new InputData[qtdOfSamples];
   string line;
   ifstream txtFile;
-  txtFile.open("100.txt");
+  txtFile.open(fileName);
   int i = 0, a = 0, b = 0, c = 0;
   while (getline(txtFile, line)) {
     if (!line.length()) {
@@ -99,7 +99,6 @@ void SortMethods::bubbleSort() {
 }
 
 void SortMethods::sort() {
-
   for (int i = 0; i < qtdOfSamples; i++) {
     generateArray(i, input[i].getArraySize(), input[i].getArrayType());
     input[i].printArray();
