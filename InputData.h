@@ -18,7 +18,10 @@ class InputData {
     void setArrayType(string type);
     void setArraySize(int size);
     void setSortMethod(string method);
-    void setArray(int arr[], int size);
+    void setArrayOrdC(int arr[], int size);
+    void setArrayOrdA(int arr[], int size);
+    void setArrayOrdD(int arr[], int size);
+    void setArrayOrdP(int arr[], int size);
     void printArray();
 
     private:
@@ -28,7 +31,6 @@ class InputData {
       string sortMethod;
       int *array;
     
-    //friend class SortMethods;
 };
 
 int InputData::getArraySize() {
@@ -55,14 +57,20 @@ void InputData::setSortMethod(string method) {
   sortMethod = method;
 }
 
-void InputData::setArray(int arr[], int size) {
+void InputData::setArrayOrdC(int arr[], int size) {
   array = new int[size];
 
   for (int i = 0; i < size; i++) {
-    array[i] = rand()/10000000;
+    array[i] = 1;
   }
+}
 
-  cout << "ola " << endl;
+void InputData::setArrayOrdA(int arr[], int size) {
+  array = new int[size];
+
+  for (int i = 0; i < size; i++) {
+    array[i] = 2;
+  }
 }
 
 void InputData::printArray() {
@@ -71,6 +79,22 @@ void InputData::printArray() {
     cout << array[i] << " ";
   }
   cout << "]" << endl;
+}
+
+void InputData::setArrayOrdD(int arr[], int size) {
+  array = new int[size];
+
+  for (int i = 0; i < size; i++) {
+    array[i] = 3;
+  }
+}
+
+void InputData::setArrayOrdP(int arr[], int size) {
+  array = new int[size];
+
+  for (int i = 0; i < size; i++) {
+    array[i] = 4;
+  }
 }
 
 

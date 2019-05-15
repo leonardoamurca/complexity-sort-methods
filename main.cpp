@@ -5,11 +5,10 @@ using namespace std;
 
 int main() {
   
-  SortMethods sort;
-  sort.setQtdOfSamples();
-  sort.readFile();
-  sort.generateArray();
-  sort.bubbleSort();
+  SortMethods inputs;
+  inputs.readFile();
+  inputs.sort();
+  inputs.bubbleSort();
   
   return 0;
 }

@@ -14,10 +14,10 @@ class SortMethods {
 
     SortMethods() { };
     void readFile();
-    void generateArray();
+    void generateArray(int i, int size, string type);
     void bubbleSort();
+    void sort();
     void setQtdOfSamples();
-    
 
   private:
 
@@ -49,6 +49,7 @@ void SortMethods::setQtdOfSamples() {
 
 
 void SortMethods::readFile() {
+  setQtdOfSamples();
   InputData *inputAux = new InputData[qtdOfSamples];
   string line;
   ifstream txtFile;
@@ -76,18 +77,33 @@ void SortMethods::readFile() {
   txtFile.close();
 }
 
-void SortMethods::generateArray() {
-  int arraySize = input[0].getArraySize();
+void SortMethods::generateArray(int i, int size, string type) {
+  int arraySize = input[i].getArraySize();
   int *arr = new int[arraySize];
 
-  input->setArray(arr, arraySize);
+  if (type == "OrdC") {
+    input[i].setArrayOrdC(arr, arraySize);
+  } else if (type == "OrdA")  {
+    input[i].setArrayOrdA(arr, arraySize);
+  } else if (type == "OrdD") {
+    input[i].setArrayOrdD(arr, arraySize);
+  } else if (type == "OrdP") {
+    input[i].setArrayOrdP(arr, arraySize);
+  } else {
+    cout << "Erro ao gerar o vetor!" << endl;
+  }
 }
 
 void SortMethods::bubbleSort() {
   cout << "Bubble Sort!" << endl;
+}
 
-  input[0].printArray();
-  
+void SortMethods::sort() {
+
+  for (int i = 0; i < qtdOfSamples; i++) {
+    generateArray(i, input[i].getArraySize(), input[i].getArrayType());
+    input[i].printArray();
+  }
 }
 
 
