@@ -6,14 +6,16 @@ using namespace std;
 
 int main() {
   
-
-  SortMethods inputs;
+  // Entrada de dados pelo usuário
   string fileName;
   cout << "Digite o nome do arquivo com as entradas (Ex: 100.txt): " << endl;
   cin >> fileName;
+
+  // Processamento das amostras
+  SortMethods inputs;
   inputs.readFile(fileName);
   inputs.sort();
-  inputs.bubbleSort();
+  // inputs.bubbleSort();
   
   return 0;
 }

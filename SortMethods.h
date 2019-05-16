@@ -15,7 +15,7 @@ class SortMethods {
     SortMethods() { };
     void readFile(string fileName);
     void generateArray(int i, int size, string type);
-    void bubbleSort();
+    void bubbleSort(int arr[], int size, int i);
     void sort();
     void setQtdOfSamples();
 
@@ -94,14 +94,33 @@ void SortMethods::generateArray(int i, int size, string type) {
   }
 }
 
-void SortMethods::bubbleSort() {
-  cout << "Bubble Sort!" << endl;
+void SortMethods::bubbleSort(int arr[], int size, int i) {
+  for (int j = 0; j < size-1; j++) {
+    for (int k = 0; k < size-j-1; k++) {
+      if (arr[k] > arr[k+1]) {
+        swap(arr[k], arr[k+1]); 
+      }
+    }
+  }            
 }
 
 void SortMethods::sort() {
   for (int i = 0; i < qtdOfSamples; i++) {
+    cout << endl;
     generateArray(i, input[i].getArraySize(), input[i].getArrayType());
+    cout << "Array original: ";
     input[i].printArray();
+    if (input[i].getSortMethod() == "Bubble") {
+      bubbleSort(input[i].getArray(), input[i].getArraySize(), i);
+    }
+    cout << endl;
+    cout << "Array ordenado: ";
+    input[i].printArray();
+    cout << endl;
+    cout << "------------------------------------------------------------";
+    cout << "------------------------------------------------------------";
+    cout << "--------------------------------------------------------" << endl;
+    
   }
 }
 

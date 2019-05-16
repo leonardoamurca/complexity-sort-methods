@@ -15,6 +15,7 @@ class InputData {
     string getSortMethod();
     int getArraySize();
     int *generateData();
+    int *getArray();
     void setArrayType(string type);
     void setArraySize(int size);
     void setSortMethod(string method);
@@ -45,6 +46,10 @@ string InputData::getSortMethod() {
   return sortMethod;
 }
 
+int *InputData::getArray() {
+  return array;
+}
+
 void InputData::setArrayType(string type) {
   arrayType = type;
 }
@@ -61,7 +66,7 @@ void InputData::setArrayOrdC(int arr[], int size) {
   array = new int[size];
 
   for (int i = 0; i < size; i++) {
-    array[i] = 1;
+    array[i] = i;
   }
 }
 
@@ -69,7 +74,7 @@ void InputData::setArrayOrdA(int arr[], int size) {
   array = new int[size];
 
   for (int i = 0; i < size; i++) {
-    array[i] = 2;
+    array[i] = rand()%100;
   }
 }
 
@@ -84,8 +89,8 @@ void InputData::printArray() {
 void InputData::setArrayOrdD(int arr[], int size) {
   array = new int[size];
 
-  for (int i = 0; i < size; i++) {
-    array[i] = 3;
+  for (int i = size; i >= 0; i--) {
+    array[i] = i;
   }
 }
 
@@ -96,6 +101,5 @@ void InputData::setArrayOrdP(int arr[], int size) {
     array[i] = 4;
   }
 }
-
 
 #endif
