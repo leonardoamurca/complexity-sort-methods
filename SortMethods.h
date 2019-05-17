@@ -24,8 +24,6 @@ class SortMethods {
     InputData *input;
     int qtdOfSamples;
     int *array;
-
-  friend class InputData;
   
 };
 
@@ -58,18 +56,20 @@ void SortMethods::readFile(string fileName) {
   while (getline(txtFile, line)) {
     if (!line.length()) {
       i = 0;
-    } 
-    if (i == 1) {
-      inputAux[a].setArrayType(line);
-      a++;
     }
-    if (i == 2) {
-      inputAux[b].setArraySize(stoi(line));
-      b++;
-    }
-    if (i == 3) {
-      inputAux[c].setSortMethod(line);
-      c++;
+    switch (i) {
+      case 1:
+        inputAux[a].setArrayType(line);
+        a++;
+        break;
+      case 2:
+        inputAux[b].setArraySize(stoi(line));
+        b++;
+        break;
+      case 3:
+        inputAux[c].setSortMethod(line);
+        c++;
+        break;
     }
     i++;
   }
@@ -106,21 +106,20 @@ void SortMethods::bubbleSort(int arr[], int size, int i) {
 
 void SortMethods::sort() {
   for (int i = 0; i < qtdOfSamples; i++) {
-    cout << endl;
     generateArray(i, input[i].getArraySize(), input[i].getArrayType());
-    cout << "Array original: ";
+
+    cout << "\n Array original: ";
     input[i].printArray();
+
     if (input[i].getSortMethod() == "Bubble") {
       bubbleSort(input[i].getArray(), input[i].getArraySize(), i);
     }
-    cout << endl;
-    cout << "Array ordenado: ";
+    cout << "\n Array ordenado: ";
     input[i].printArray();
     cout << endl;
     cout << "------------------------------------------------------------";
     cout << "------------------------------------------------------------";
-    cout << "--------------------------------------------------------" << endl;
-    
+    cout << "--------------------------------------------------------" << endl;   
   }
 }
 

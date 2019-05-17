@@ -88,9 +88,10 @@ void InputData::printArray() {
 
 void InputData::setArrayOrdD(int arr[], int size) {
   array = new int[size];
-
-  for (int i = size; i >= 0; i--) {
-    array[i] = i;
+  int j = 0;
+  for (int i = size; i > 0; i--) {
+    array[j] = i;
+    j++;
   }
 }
 
