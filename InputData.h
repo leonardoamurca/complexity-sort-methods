@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <math.h>
 
 using namespace std;
 
@@ -97,9 +98,10 @@ void InputData::setArrayOrdD(int arr[], int size) {
 
 void InputData::setArrayOrdP(int arr[], int size) {
   array = new int[size];
-
   for (int i = 0; i < size; i++) {
-    array[i] = 4;
+    i < floor(size*0.1) 
+      ? array[i] = rand()%100
+      : array[i] = i; 
   }
 }
 
