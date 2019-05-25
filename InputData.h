@@ -12,44 +12,21 @@ class InputData {
   public:
   
     InputData() { };
-    string getArrayType();
-    string getSortMethod();
-    int getArraySize();
-    int *generateData();
-    int *getArray();
     void setArrayType(string type);
     void setArraySize(int size);
     void setSortMethod(string method);
-    void setArrayOrdC(int arr[], int size);
     void setArrayOrdA(int arr[], int size);
+    void setArrayOrdC(int arr[], int size);
     void setArrayOrdD(int arr[], int size);
     void setArrayOrdP(int arr[], int size);
     void printArray();
 
-    private:
-      
-      int arraySize;
-      string arrayType;
-      string sortMethod;
-      int *array;
-    
+    int arraySize; // Tamanho do vetor
+    string arrayType; // Tipo de ordenação || Tipo do vetor (OrdC, OrdD, OrdA ou OrdP)
+    string sortMethod; // Método de ordenção (Bubble, Insert, Select)
+    int *array; // Vetor
+
 };
-
-int InputData::getArraySize() {
-  return arraySize;
-}
-
-string InputData::getArrayType() {
-  return arrayType;
-}
-
-string InputData::getSortMethod() {
-  return sortMethod;
-}
-
-int *InputData::getArray() {
-  return array;
-}
 
 void InputData::setArrayType(string type) {
   arrayType = type;
@@ -63,14 +40,6 @@ void InputData::setSortMethod(string method) {
   sortMethod = method;
 }
 
-void InputData::setArrayOrdC(int arr[], int size) {
-  array = new int[size];
-
-  for (int i = 0; i < size; i++) {
-    array[i] = i;
-  }
-}
-
 void InputData::setArrayOrdA(int arr[], int size) {
   array = new int[size];
 
@@ -79,12 +48,12 @@ void InputData::setArrayOrdA(int arr[], int size) {
   }
 }
 
-void InputData::printArray() {
-  cout << "[ ";
-  for (int i = 0; i < arraySize; i++) {
-    cout << array[i] << " ";
+void InputData::setArrayOrdC(int arr[], int size) {
+  array = new int[size];
+
+  for (int i = 0; i < size; i++) {
+    array[i] = i;
   }
-  cout << "]" << endl;
 }
 
 void InputData::setArrayOrdD(int arr[], int size) {
@@ -103,6 +72,14 @@ void InputData::setArrayOrdP(int arr[], int size) {
       ? array[i] = rand()%100
       : array[i] = i; 
   }
+}
+
+void InputData::printArray() {
+  cout << "[ ";
+  for (int i = 0; i < arraySize; i++) {
+    cout << array[i] << " ";
+  }
+  cout << "]" << endl;
 }
 
 #endif

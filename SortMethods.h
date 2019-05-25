@@ -2,6 +2,7 @@
 #define SORTMETHODS_H
 
 #include "InputData.h"
+#include "OutputData.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -15,9 +16,12 @@ class SortMethods {
     SortMethods() { };
     void readFile(string fileName);
     void generateArray(int i, int size, string type);
-    void bubbleSort(int arr[], int size, int i);
     void sort();
     void setQtdOfSamples();
+    void printOriginalArray(int i);
+    void printSortedArray(int i);
+    
+    void bubbleSort(int arr[], int size, int i);
 
   private:
 
@@ -49,6 +53,7 @@ void SortMethods::setQtdOfSamples() {
 void SortMethods::readFile(string fileName) {
   setQtdOfSamples();
   InputData *inputAux = new InputData[qtdOfSamples];
+  OutputData *outputAux = new OutputData[qtdOfSamples];
   string line;
   ifstream txtFile;
   txtFile.open(fileName);
@@ -60,14 +65,17 @@ void SortMethods::readFile(string fileName) {
     switch (i) {
       case 1:
         inputAux[a].setArrayType(line);
+        outputAux[a].setArrayType(line);
         a++;
         break;
       case 2:
         inputAux[b].setArraySize(stoi(line));
+        outputAux[b].setArraySize(stoi(line));
         b++;
         break;
       case 3:
         inputAux[c].setSortMethod(line);
+        outputAux[c].setSortMethod(line);
         c++;
         break;
     }
@@ -78,7 +86,7 @@ void SortMethods::readFile(string fileName) {
 }
 
 void SortMethods::generateArray(int i, int size, string type) {
-  int arraySize = input[i].getArraySize();
+  int arraySize = input[i].arraySize;
   int *arr = new int[arraySize];
 
   if (type == "OrdC") {
@@ -95,33 +103,44 @@ void SortMethods::generateArray(int i, int size, string type) {
 }
 
 void SortMethods::bubbleSort(int arr[], int size, int i) {
+  int comparissons = 0;
   for (int j = 0; j < size-1; j++) {
     for (int k = 0; k < size-j-1; k++) {
+      comparissons++;
       if (arr[k] > arr[k+1]) {
         swap(arr[k], arr[k+1]); 
       }
     }
-  }            
+  }  
 }
 
 void SortMethods::sort() {
   for (int i = 0; i < qtdOfSamples; i++) {
-    generateArray(i, input[i].getArraySize(), input[i].getArrayType());
+    generateArray(i, input[i].arraySize, input[i].arrayType);
+    printOriginalArray(i);
 
-    cout << "\n Array original: ";
-    input[i].printArray();
-
-    if (input[i].getSortMethod() == "Bubble") {
-      bubbleSort(input[i].getArray(), input[i].getArraySize(), i);
+    if (input[i].sortMethod == "Bubble") {
+      bubbleSort(input[i].array, input[i].arraySize, i);
     }
-    cout << "\n Array ordenado: ";
-    input[i].printArray();
-    cout << endl;
-    cout << "------------------------------------------------------------";
-    cout << "------------------------------------------------------------";
-    cout << "--------------------------------------------------------" << endl;   
+    printSortedArray(i);  
   }
 }
+
+void SortMethods::printOriginalArray(int i) {
+  cout << "\n Array original: ";
+  input[i].printArray();
+}
+
+void SortMethods::printSortedArray(int i) {
+  cout << "\n Array ordenado: ";
+  input[i].printArray();
+  cout << endl;
+  cout << "------------------------------------------------------------";
+  cout << "------------------------------------------------------------";
+  cout << "--------------------------------------------------------" << endl;
+}
+
+
 
 
 #endif
