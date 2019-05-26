@@ -22,6 +22,7 @@ class SortMethods {
     void printOriginalArray(int i);
     void printSortedArray(int i); 
     void bubbleSort(int arr[], int size, int i);
+    int getQtdOfSamples();
     double runtime(clock_t tStart);
 
   private:
@@ -110,8 +111,8 @@ void SortMethods::generateArray(int i, int size, string type) {
 
 void SortMethods::bubbleSort(int arr[], int size, int i) {
   clock_t tStart = clock();
-  int comparisons = 0;
-  int movimentations = 0;
+  long int comparisons = 0;
+  long int movimentations = 0;
   int aux;
   for (int j = 0; j < size-1; j++) {
     for (int k = 0; k < size-j-1; k++) {
@@ -126,7 +127,7 @@ void SortMethods::bubbleSort(int arr[], int size, int i) {
       }
     }
   }
-  cout << "Tempo: " << runtime(tStart) << endl;
+  output[i].setRuntime(runtime(tStart), i);
   output[i].setComparisonsQtd(comparisons, i);
   output[i].setMovimentationsQtd(movimentations, i);
 }
@@ -134,23 +135,23 @@ void SortMethods::bubbleSort(int arr[], int size, int i) {
 void SortMethods::sort() {
   for (int i = 0; i < qtdOfSamples; i++) {
     generateArray(i, input[i].arraySize, input[i].arrayType);
-    printOriginalArray(i);
+    //printOriginalArray(i);
 
     if (input[i].sortMethod == "Bubble") {
       bubbleSort(input[i].array, input[i].arraySize, i);
     }
-    printSortedArray(i);  
+    //printSortedArray(i);  
   }
 }
 
 void SortMethods::printOriginalArray(int i) {
-  cout << "\n Array original: ";
-  input[i].printArray();
+  //cout << "\n Array original: ";
+  //input[i].printArray();
 }
 
 void SortMethods::printSortedArray(int i) {
-  cout << "\n Array ordenado: ";
-  input[i].printArray();
+  //cout << "\n Array ordenado: ";
+  //input[i].printArray();
   cout << endl;
   cout << "------------------------------------------------------------";
   cout << "------------------------------------------------------------";
@@ -159,6 +160,10 @@ void SortMethods::printSortedArray(int i) {
 
 double SortMethods::runtime(clock_t tStart) {
   return (double) (clock() - tStart)/1000; // Tempo de relogio (em ms)
+}
+
+int SortMethods::getQtdOfSamples() {
+  return qtdOfSamples;
 }
 
 

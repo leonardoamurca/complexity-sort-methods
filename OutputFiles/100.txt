@@ -1,0 +1,16 @@
+Runtime: 0.054 ms
+Comparisons: 4950
+Movimentations: 0
+ 
+Runtime: 0.104 ms
+Comparisons: 4950
+Movimentations: 7641
+ 
+Runtime: 0.105 ms
+Comparisons: 4950
+Movimentations: 14850
+ 
+Runtime: 0.057 ms
+Comparisons: 4950
+Movimentations: 1020
+ 

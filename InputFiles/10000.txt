@@ -1,0 +1,16 @@
+
+OrdC
+10000
+Bubble
+
+OrdA
+10000
+Bubble
+
+OrdD
+10000
+Bubble
+
+OrdP
+10000
+Bubble

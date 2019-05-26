@@ -3,6 +3,7 @@
 #include "InputData.h"
 
 #include <string>
+#include <fstream>
 
 class OutputData : public InputData {
   
@@ -12,15 +13,16 @@ class OutputData : public InputData {
     void setArrayType(string type);
     void setArraySize(int size);
     void setSortMethod(string method);
-    void setComparisonsQtd(int comparisons, int i);
-    void setMovimentationsQtd(int movimentations, int i);
+    void setComparisonsQtd(long int comparisons, int i);
+    void setMovimentationsQtd(long int movimentations, int i);
+    void setRuntime(double time, int i);
+    void writeOnFile(string fileName);
 
   private:
 
-    int comparisonsQtd; // Número de comparações
-    int movimentationsQtd; // Número de movimentações
-    int timeExpended; // Tempo gasto
-
+    long int comparisonsQtd; // Número de comparações
+    long int movimentationsQtd; // Número de movimentações
+    double runtime; // Tempo gasto (em milisegundos)
 };
 
 void OutputData::setArrayType(string type) {
@@ -35,14 +37,34 @@ void OutputData::setSortMethod(string method) {
   sortMethod = method;
 }
 
-void OutputData::setComparisonsQtd(int comparisons, int i) {
+void OutputData::setComparisonsQtd(long int comparisons, int i) {
   comparisonsQtd = comparisons;
-  cout << "Comparisons: " << comparisonsQtd << endl;
 }
 
-void OutputData::setMovimentationsQtd(int movimentations, int i) {
+void OutputData::setMovimentationsQtd(long int movimentations, int i) {
   movimentationsQtd = movimentations;
-  cout << "Movimentations: " << movimentationsQtd << endl;
+}
+
+void OutputData::setRuntime(double time, int i) {
+  runtime = time;
+}
+
+
+void OutputData::writeOnFile(string fileName) {
+  int qtdOfSamples = 4;
+  OutputData *outputAux = new OutputData[qtdOfSamples];
+  string line;
+  ofstream outputFile(fileName);
+
+  for (int i = 0; i < qtdOfSamples; i++) {
+    outputFile << "Runtime: " << outputAux[i].runtime << " ms" << endl;
+    outputFile << "Comparisons: " << outputAux[i].comparisonsQtd << endl;
+    outputFile << "Movimentations: " << outputAux[i].movimentationsQtd << endl;
+    outputFile << " " << endl;
+  }
+
+  outputFile.close();
+  delete[] outputAux;
 }
 
 
