@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <time.h>
 
 using namespace std;
 
@@ -19,9 +20,9 @@ class SortMethods {
     void sort();
     void setQtdOfSamples();
     void printOriginalArray(int i);
-    void printSortedArray(int i);
-    
+    void printSortedArray(int i); 
     void bubbleSort(int arr[], int size, int i);
+    double runtime(clock_t tStart);
 
   private:
 
@@ -108,6 +109,7 @@ void SortMethods::generateArray(int i, int size, string type) {
 }
 
 void SortMethods::bubbleSort(int arr[], int size, int i) {
+  clock_t tStart = clock();
   int comparisons = 0;
   int movimentations = 0;
   int aux;
@@ -124,6 +126,7 @@ void SortMethods::bubbleSort(int arr[], int size, int i) {
       }
     }
   }
+  cout << "Tempo: " << runtime(tStart) << endl;
   output[i].setComparisonsQtd(comparisons, i);
   output[i].setMovimentationsQtd(movimentations, i);
 }
@@ -152,6 +155,10 @@ void SortMethods::printSortedArray(int i) {
   cout << "------------------------------------------------------------";
   cout << "------------------------------------------------------------";
   cout << "--------------------------------------------------------" << endl;
+}
+
+double SortMethods::runtime(clock_t tStart) {
+  return (double) (clock() - tStart)/1000; // Tempo de relogio (em ms)
 }
 
 
