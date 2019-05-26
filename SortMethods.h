@@ -36,7 +36,7 @@ void SortMethods::setQtdOfSamples() {
   string line;
   qtdOfSamples = 0;
   ifstream txtFile;
-  txtFile.open("100.txt");
+  txtFile.open("./InputFiles/100.txt");
   int i = 0;
   while(getline(txtFile, line)) {
     if (!line.length()) {

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <math.h>
+#include "randomArray.h"
 
 using namespace std;
 
@@ -42,10 +43,7 @@ void InputData::setSortMethod(string method) {
 
 void InputData::setArrayOrdA(int arr[], int size) {
   array = new int[size];
-
-  for (int i = 0; i < size; i++) {
-    array[i] = rand()%100;
-  }
+  array = randomArray(1, 100, size);
 }
 
 void InputData::setArrayOrdC(int arr[], int size) {

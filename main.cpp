@@ -14,7 +14,7 @@ int main() {
   // Processamento das amostras
   SortMethods inputs;
   // inputs.readFile(fileName);
-  inputs.readFile("100.txt");
+  inputs.readFile("./InputFiles/100.txt");
   inputs.sort();
   
   return 0;
