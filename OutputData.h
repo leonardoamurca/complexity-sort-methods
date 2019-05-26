@@ -12,12 +12,13 @@ class OutputData : public InputData {
     void setArrayType(string type);
     void setArraySize(int size);
     void setSortMethod(string method);
-    void setComparissonsQtd(int comparissons);
+    void setComparisonsQtd(int comparisons, int i);
+    void setMovimentationsQtd(int movimentations, int i);
 
   private:
 
-    int comparissonsQtd; // Número de comparações
-    int drives; // Número de movimentações
+    int comparisonsQtd; // Número de comparações
+    int movimentationsQtd; // Número de movimentações
     int timeExpended; // Tempo gasto
 
 };
@@ -34,8 +35,14 @@ void OutputData::setSortMethod(string method) {
   sortMethod = method;
 }
 
-void OutputData::setComparissonsQtd(int comparissons) {
-  comparissonsQtd = comparissons;
+void OutputData::setComparisonsQtd(int comparisons, int i) {
+  comparisonsQtd = comparisons;
+  cout << "Comparisons: " << comparisonsQtd << endl;
+}
+
+void OutputData::setMovimentationsQtd(int movimentations, int i) {
+  movimentationsQtd = movimentations;
+  cout << "Movimentations: " << movimentationsQtd << endl;
 }
 
 

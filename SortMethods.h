@@ -26,6 +26,7 @@ class SortMethods {
   private:
 
     InputData *input;
+    OutputData *output;
     int qtdOfSamples;
     int *array;
   
@@ -82,6 +83,10 @@ void SortMethods::readFile(string fileName) {
     i++;
   }
   input = inputAux;
+  output = outputAux;
+  delete[] inputAux;
+  delete[] outputAux;
+
   txtFile.close();
 }
 
@@ -103,15 +108,24 @@ void SortMethods::generateArray(int i, int size, string type) {
 }
 
 void SortMethods::bubbleSort(int arr[], int size, int i) {
-  int comparissons = 0;
+  int comparisons = 0;
+  int movimentations = 0;
+  int aux;
   for (int j = 0; j < size-1; j++) {
     for (int k = 0; k < size-j-1; k++) {
-      comparissons++;
+      comparisons++;
       if (arr[k] > arr[k+1]) {
-        swap(arr[k], arr[k+1]); 
+        movimentations++;
+        aux= arr[k];
+        movimentations++;
+        arr[k] = arr[k+1];
+        movimentations++;
+        arr[k+1] = aux; 
       }
     }
-  }  
+  }
+  output[i].setComparisonsQtd(comparisons, i);
+  output[i].setMovimentationsQtd(movimentations, i);
 }
 
 void SortMethods::sort() {
