@@ -18,7 +18,7 @@ class OutputData {
     void setComparisonsQtd(long int comparisons);
     void setMovimentationsQtd(long int movimentations);
     void setRuntime(double time);
-    void writeOnFile(string fileName);
+    void writeOnFile(string fileName, int fileSamplesQtd);
 
     long int comparisonsQtd; // Número de comparações
     long int movimentationsQtd; // Número de movimentações
@@ -58,15 +58,14 @@ void OutputData::setRuntime(double time) {
 }
 
 
-void OutputData::writeOnFile(string fileName) {
+void OutputData::writeOnFile(string fileName, int fileSamplesQtd) {
   
-  int qtdOfSamples = 4;
-  OutputData *outputAux = new OutputData[qtdOfSamples];
+  OutputData *outputAux = new OutputData[fileSamplesQtd];
   string line;
   ofstream outputFile(fileName);
   cout << sortMethod[0] << endl;
 
-  for (int i = 0; i < qtdOfSamples; i++) {
+  for (int i = 0; i < fileSamplesQtd; i++) {
     outputFile << "Sort Method: " << outputAux[i].sortMethod << endl;
     outputFile << "Array Type: " << outputAux[i].arrayType << endl;
     outputFile << "Runtime: " << outputAux[i].runtime << " ms" << endl;

@@ -15,14 +15,14 @@ class SortMethods {
   public: 
 
     SortMethods() { };
-    void readFile(string fileName);
+    void readFile(string fileName, int fileSamplesQtd);
     void generateArray(int i, int size, string type);
     void sort();
-    void setQtdOfSamples();
+    int setQtdOfSamples(string fileName);
     void printOriginalArray(int i);
     void printSortedArray(int i); 
     void bubbleSort(int arr[], int size, int i);
-    int getQtdOfSamples();
+    void insertionSort(int arr[], int size, int i);
     double runtime(clock_t tStart);
 
   private:
@@ -34,11 +34,11 @@ class SortMethods {
   
 };
 
-void SortMethods::setQtdOfSamples() {
+int SortMethods::setQtdOfSamples(string fileName) {
   string line;
   qtdOfSamples = 0;
   ifstream txtFile;
-  txtFile.open("./InputFiles/100.txt");
+  txtFile.open(fileName);
   int i = 0;
   while(getline(txtFile, line)) {
     if (!line.length()) {
@@ -50,13 +50,13 @@ void SortMethods::setQtdOfSamples() {
     i++;
   }
   txtFile.close();
+  return qtdOfSamples;
 }
 
 
-void SortMethods::readFile(string fileName) {
-  setQtdOfSamples();
-  InputData *inputAux = new InputData[qtdOfSamples];
-  OutputData *outputAux = new OutputData[qtdOfSamples];
+void SortMethods::readFile(string fileName, int fileSamplesQtd) {
+  InputData *inputAux = new InputData[fileSamplesQtd];
+  OutputData *outputAux = new OutputData[fileSamplesQtd];
   string line;
   ifstream txtFile;
   txtFile.open(fileName);
@@ -127,11 +127,36 @@ void SortMethods::bubbleSort(int arr[], int size, int i) {
       }
     }
   }
-  output[i].setArraySize(11);
   output[i].setRuntime(runtime(tStart));
   output[i].setComparisonsQtd(comparisons);
   output[i].setMovimentationsQtd(movimentations);
 }
+
+void SortMethods::insertionSort(int arr[], int size, int i) {
+  clock_t tStart = clock();
+  long int comparisons = 0;
+  long int movimentations = 0;
+
+  int key, j;  
+  for (int k = 1; k < size; k++) {  
+    key = arr[k];  
+    j = k - 1;  
+    /* Move elements of arr[0..i-1], that are  
+    greater than key, to one position ahead  
+    of their current position */
+    while (j >= 0 && arr[j] > key) {  
+      arr[j + 1] = arr[j];  
+      j = j - 1;  
+    }  
+    arr[j + 1] = key;  
+  }  
+
+  output[i].setRuntime(runtime(tStart));
+  output[i].setComparisonsQtd(comparisons);
+  output[i].setMovimentationsQtd(movimentations);
+}
+
+
 
 void SortMethods::sort() {
   for (int i = 0; i < qtdOfSamples; i++) {
@@ -140,6 +165,8 @@ void SortMethods::sort() {
 
     if (input[i].sortMethod == "Bubble") {
       bubbleSort(input[i].array, input[i].arraySize, i);
+    } else if (input[i].sortMethod == "Insertion") {
+      insertionSort(input[i].array, input[i].arraySize, i);
     }
     //printSortedArray(i);  
   }
@@ -151,8 +178,8 @@ void SortMethods::printOriginalArray(int i) {
 }
 
 void SortMethods::printSortedArray(int i) {
-  //cout << "\n Array ordenado: ";
-  //input[i].printArray();
+  cout << "\n Array ordenado: ";
+  input[i].printArray();
   cout << endl;
   cout << "------------------------------------------------------------";
   cout << "------------------------------------------------------------";
@@ -162,12 +189,5 @@ void SortMethods::printSortedArray(int i) {
 double SortMethods::runtime(clock_t tStart) {
   return (double) (clock() - tStart)/1000; // Tempo de relogio (em ms)
 }
-
-int SortMethods::getQtdOfSamples() {
-  return qtdOfSamples;
-}
-
-
-
 
 #endif

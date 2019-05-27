@@ -14,3 +14,7 @@ Bubble
 OrdP
 100
 Bubble
+
+OrdA
+100
+Insertion
