@@ -139,15 +139,16 @@ void SortMethods::insertionSort(int arr[], int size, int i) {
 
   int key, j;  
   for (int k = 1; k < size; k++) {  
+    movimentations++;
     key = arr[k];  
-    j = k - 1;  
-    /* Move elements of arr[0..i-1], that are  
-    greater than key, to one position ahead  
-    of their current position */
-    while (j >= 0 && arr[j] > key) {  
+    j = k - 1;
+    comparisons ++;
+    while (j >= 0 && arr[j] > key) {
+      movimentations++;;  
       arr[j + 1] = arr[j];  
       j = j - 1;  
     }  
+    movimentations++;
     arr[j + 1] = key;  
   }  
 

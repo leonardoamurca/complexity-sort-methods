@@ -30,9 +30,6 @@ int main() {
     inputs.sort();
     outputs.writeOnFile(outputFileNames[i], fileSamplesQtd);
   }
-
-  // Processando salvamento nos arquivos de saída
- 
-  
+   
   return 0;
 }

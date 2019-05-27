@@ -15,6 +15,18 @@ OrdP
 100
 Bubble
 
+OrdC
+100
+Insertion
+
 OrdA
+100
+Insertion
+
+OrdD
+100
+Insertion
+
+OrdP
 100
 Insertion
