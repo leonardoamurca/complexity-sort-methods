@@ -1,16 +1,24 @@
-Runtime: 153.582 ms
+Sort Method: Bubble
+Array Type: OrdC
+Runtime: 151.608 ms
 Comparisons: 49995000
 Movimentations: 0
  
-Runtime: 323.727 ms
+Sort Method: Bubble
+Array Type: OrdA
+Runtime: 316.66 ms
 Comparisons: 49995000
-Movimentations: 74049381
+Movimentations: 74280159
  
-Runtime: 318.82 ms
+Sort Method: Bubble
+Array Type: OrdD
+Runtime: 314.649 ms
 Comparisons: 49995000
 Movimentations: 149985000
  
-Runtime: 151.192 ms
+Sort Method: Bubble
+Array Type: OrdP
+Runtime: 150.148 ms
 Comparisons: 49995000
-Movimentations: 743088
+Movimentations: 754044
  

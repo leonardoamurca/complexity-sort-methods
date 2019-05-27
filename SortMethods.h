@@ -4,10 +4,10 @@
 #include "InputData.h"
 #include "OutputData.h"
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <fstream>
 #include <time.h>
-
+#include <limits>  
 using namespace std;
 
 class SortMethods {
@@ -77,19 +77,19 @@ void SortMethods::readFile(string fileName) {
         b++;
         break;
       case 3:
-        inputAux[c].setSortMethod(line);
+      // cout << line << endl;
         outputAux[c].setSortMethod(line);
+        inputAux[c].setSortMethod(line);
         c++;
         break;
     }
     i++;
   }
+  txtFile.close();
   input = inputAux;
   output = outputAux;
   delete[] inputAux;
   delete[] outputAux;
-
-  txtFile.close();
 }
 
 void SortMethods::generateArray(int i, int size, string type) {
@@ -127,9 +127,10 @@ void SortMethods::bubbleSort(int arr[], int size, int i) {
       }
     }
   }
-  output[i].setRuntime(runtime(tStart), i);
-  output[i].setComparisonsQtd(comparisons, i);
-  output[i].setMovimentationsQtd(movimentations, i);
+  output[i].setArraySize(11);
+  output[i].setRuntime(runtime(tStart));
+  output[i].setComparisonsQtd(comparisons);
+  output[i].setMovimentationsQtd(movimentations);
 }
 
 void SortMethods::sort() {
