@@ -193,7 +193,7 @@ void SortMethods::shellSort(int arr[], int size, int i) {
     for (int i = gap; i < size; i++) { 
       int temp = arr[i]; 
       int j;
-      comparisons++;             
+      comparisons+=2;             
       for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
         movimentations++;
         arr[j] = arr[j - gap]; 

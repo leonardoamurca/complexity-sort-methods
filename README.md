@@ -65,3 +65,23 @@ This project counts the number of: movimentations, comparisons and runtime of ea
     arr[k] = temp;
   }
 ```
+
+## Shell Sort
+
+```cpp
+  int comparisons = 0; // Counter for number of comparissons
+  int movimentations = 0; // Counter for number of movimentations
+  for (int gap = size/2; gap > 0; gap /= 2) { 
+    for (int i = gap; i < size; i++) { 
+      int temp = arr[i]; 
+      int j;
+      comparisons+=2;             
+      for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+        movimentations++;
+        arr[j] = arr[j - gap]; 
+      }
+      movimentations++;    
+      arr[j] = temp; 
+    } 
+  } 
+```

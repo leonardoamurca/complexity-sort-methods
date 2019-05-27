@@ -1,96 +1,96 @@
 Sort Method: Bubble
 Array Type: OrdC
-Runtime: 0.022 ms
+Runtime: 0.054 ms
 Comparisons: 4950
 Movimentations: 0
  
 Sort Method: Bubble
 Array Type: OrdA
-Runtime: 0.035 ms
+Runtime: 0.101 ms
 Comparisons: 4950
-Movimentations: 8367
+Movimentations: 7740
  
 Sort Method: Bubble
 Array Type: OrdD
-Runtime: 0.035 ms
+Runtime: 0.129 ms
 Comparisons: 4950
 Movimentations: 14850
  
 Sort Method: Bubble
 Array Type: OrdP
-Runtime: 0.02 ms
+Runtime: 0.057 ms
 Comparisons: 4950
-Movimentations: 1299
+Movimentations: 1029
  
 Sort Method: Insertion
 Array Type: OrdC
-Runtime: 0.001 ms
+Runtime: 0.004 ms
 Comparisons: 99
 Movimentations: 198
  
 Sort Method: Insertion
 Array Type: OrdA
-Runtime: 0.011 ms
+Runtime: 0.03 ms
 Comparisons: 99
-Movimentations: 2583
+Movimentations: 2455
  
 Sort Method: Insertion
 Array Type: OrdD
-Runtime: 0.018 ms
+Runtime: 0.055 ms
 Comparisons: 99
 Movimentations: 5148
  
 Sort Method: Insertion
 Array Type: OrdP
-Runtime: 0.003 ms
+Runtime: 0.009 ms
 Comparisons: 99
-Movimentations: 649
+Movimentations: 656
  
 Sort Method: Selection
 Array Type: OrdC
-Runtime: 0.017 ms
+Runtime: 0.051 ms
 Comparisons: 4950
 Movimentations: 297
  
 Sort Method: Selection
 Array Type: OrdA
-Runtime: 0.018 ms
+Runtime: 0.054 ms
 Comparisons: 4950
 Movimentations: 297
  
 Sort Method: Selection
 Array Type: OrdD
-Runtime: 0.017 ms
+Runtime: 0.052 ms
 Comparisons: 4950
 Movimentations: 297
  
 Sort Method: Selection
 Array Type: OrdP
-Runtime: 0.017 ms
+Runtime: 0.052 ms
 Comparisons: 4950
 Movimentations: 297
  
 Sort Method: Shell
 Array Type: OrdC
-Runtime: 0.003 ms
-Comparisons: 503
+Runtime: 0.01 ms
+Comparisons: 1006
 Movimentations: 503
  
 Sort Method: Shell
 Array Type: OrdA
-Runtime: 0.01 ms
-Comparisons: 503
-Movimentations: 932
+Runtime: 0.027 ms
+Comparisons: 1006
+Movimentations: 845
  
 Sort Method: Shell
 Array Type: OrdD
-Runtime: 0.006 ms
-Comparisons: 503
+Runtime: 0.016 ms
+Comparisons: 1006
 Movimentations: 763
  
 Sort Method: Shell
 Array Type: OrdP
-Runtime: 0.006 ms
-Comparisons: 503
-Movimentations: 705
+Runtime: 0.018 ms
+Comparisons: 1006
+Movimentations: 649
  
