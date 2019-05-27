@@ -21,15 +21,3 @@ This project counts the number of: movimentations, comparisons and runtime of ea
       }
     }
 ```
-
-+---------------------------+
-|        Bubble Sort        |
-+---------------------------+
-|            100            |
-+---------------------------+
-| Comparisons    |   4950   |
-+----------------+----------+
-| Movimentations |   14850  |
-+----------------+----------+
-| Runtime        | 0.035 ms |
-+----------------+----------+
