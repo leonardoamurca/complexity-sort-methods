@@ -1,24 +1,24 @@
 Sort Method: Bubble
 Array Type: OrdC
-Runtime: 3.931 ms
+Runtime: 3.175 ms
 Comparisons: 499500
 Movimentations: 0
  
 Sort Method: Bubble
 Array Type: OrdA
-Runtime: 2.804 ms
+Runtime: 4.409 ms
 Comparisons: 499500
-Movimentations: 728952
+Movimentations: 738159
  
 Sort Method: Bubble
 Array Type: OrdD
-Runtime: 3.371 ms
+Runtime: 3.356 ms
 Comparisons: 499500
 Movimentations: 1498500
  
 Sort Method: Bubble
 Array Type: OrdP
-Runtime: 1.621 ms
+Runtime: 1.534 ms
 Comparisons: 499500
-Movimentations: 6897
+Movimentations: 7185
  

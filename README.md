@@ -1,5 +1,7 @@
-# complexity-sort-methods
+# Complexity Sort Methods
 Analysis and Reporting of the complexity of the following sorting methods: BubbleSort, InsertSort, SelectSort, ShellSort, QuickSort, and HeapSort.
+
+This project counts the number of: movimentations, comparisons and runtime of each of the sorting algorithms mentioned above.
 
 ## Bubble Sort
 ```cpp 
@@ -19,3 +21,15 @@ Analysis and Reporting of the complexity of the following sorting methods: Bubbl
       }
     }
 ```
+
++---------------------------+
+|        Bubble Sort        |
++---------------------------+
+|            100            |
++---------------------------+
+| Comparisons    |   4950   |
++----------------+----------+
+| Movimentations |   14850  |
++----------------+----------+
+| Runtime        | 0.035 ms |
++----------------+----------+
