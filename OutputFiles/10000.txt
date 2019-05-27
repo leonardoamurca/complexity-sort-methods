@@ -1,48 +1,72 @@
 Sort Method: Bubble
 Array Type: OrdC
-Runtime: 169.742 ms
+Runtime: 161.376 ms
 Comparisons: 49995000
 Movimentations: 0
  
 Sort Method: Bubble
 Array Type: OrdA
-Runtime: 345.573 ms
+Runtime: 355.166 ms
 Comparisons: 49995000
-Movimentations: 74925345
+Movimentations: 75779916
  
 Sort Method: Bubble
 Array Type: OrdD
-Runtime: 350 ms
+Runtime: 349.266 ms
 Comparisons: 49995000
 Movimentations: 149985000
  
 Sort Method: Bubble
 Array Type: OrdP
-Runtime: 164.622 ms
+Runtime: 164.018 ms
 Comparisons: 49995000
-Movimentations: 738873
+Movimentations: 751563
  
 Sort Method: Insertion
 Array Type: OrdC
-Runtime: 0.049 ms
+Runtime: 0.061 ms
 Comparisons: 9999
 Movimentations: 19998
  
 Sort Method: Insertion
 Array Type: OrdA
-Runtime: 103.427 ms
+Runtime: 86.601 ms
 Comparisons: 9999
-Movimentations: 24695946
+Movimentations: 24963937
  
 Sort Method: Insertion
 Array Type: OrdD
-Runtime: 208.477 ms
+Runtime: 177.367 ms
 Comparisons: 9999
 Movimentations: 50014998
  
 Sort Method: Insertion
 Array Type: OrdP
-Runtime: 0.894 ms
+Runtime: 1.263 ms
 Comparisons: 9999
-Movimentations: 265330
+Movimentations: 260589
+ 
+Sort Method: Selection
+Array Type: OrdC
+Runtime: 149.567 ms
+Comparisons: 49995000
+Movimentations: 29997
+ 
+Sort Method: Selection
+Array Type: OrdA
+Runtime: 140.542 ms
+Comparisons: 49995000
+Movimentations: 29997
+ 
+Sort Method: Selection
+Array Type: OrdD
+Runtime: 158.612 ms
+Comparisons: 49995000
+Movimentations: 29997
+ 
+Sort Method: Selection
+Array Type: OrdP
+Runtime: 144.85 ms
+Comparisons: 49995000
+Movimentations: 29997
  

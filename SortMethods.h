@@ -23,6 +23,7 @@ class SortMethods {
     void printSortedArray(int i); 
     void bubbleSort(int arr[], int size, int i);
     void insertionSort(int arr[], int size, int i);
+    void selectionSort(int arr[], int size, int i);
     double runtime(clock_t tStart);
 
   private:
@@ -157,6 +158,32 @@ void SortMethods::insertionSort(int arr[], int size, int i) {
   output[i].setMovimentationsQtd(movimentations);
 }
 
+void SortMethods::selectionSort(int arr[], int size, int i) {
+  clock_t tStart = clock();
+  long int comparisons = 0;
+  long int movimentations = 0;
+
+  int first, temp;
+  for (int k = size - 1; k > 0; k--) {
+    first = 0;
+    for (int j = 1; j <= k; j++) {
+      comparisons++;
+      if (arr[j] < arr[first])
+        // movimentations++;
+        first = j;
+    }
+    movimentations++;
+    temp = arr[first]; 
+    movimentations++;  // Swap smallest found with element in position i.
+    arr[first] = arr[k];
+    movimentations++;
+    arr[k] = temp;
+  }
+  output[i].setRuntime(runtime(tStart));
+  output[i].setComparisonsQtd(comparisons);
+  output[i].setMovimentationsQtd(movimentations);
+}
+
 
 
 void SortMethods::sort() {
@@ -168,6 +195,8 @@ void SortMethods::sort() {
       bubbleSort(input[i].array, input[i].arraySize, i);
     } else if (input[i].sortMethod == "Insertion") {
       insertionSort(input[i].array, input[i].arraySize, i);
+    } else if (input[i].sortMethod == "Selection") { 
+      selectionSort(input[i].array, input[i].arraySize, i);
     }
     //printSortedArray(i);  
   }
