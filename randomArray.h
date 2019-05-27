@@ -100,18 +100,4 @@ int generateRandomValue(int a, int b) {
   return rDecimal + a;
 }
 
-// Entrada de dados pelo usuário
-// void inputValues(int &a, int &b, int &size) {
-//   cout << "Quantos números deseja gerar? " << endl;
-//   cin >> size;
-
-//   cout << "Digite o intervalo que deseja gerar os números aleatórios!" << endl;
-  
-//   cout << "Limite mínimo: ";
-//   cin >> a;
-
-//   cout << "Limite máximo: ";
-//   cin >> b;
-// }
-
 #endif
