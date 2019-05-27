@@ -87,10 +87,10 @@ void SortMethods::readFile(string fileName, int fileSamplesQtd) {
     i++;
   }
   txtFile.close();
+
   input = inputAux;
   output = outputAux;
-  delete[] inputAux;
-  delete[] outputAux;
+  delete [] outputAux;
 }
 
 void SortMethods::generateArray(int i, int size, string type) {

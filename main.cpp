@@ -8,7 +8,6 @@ using namespace std;
 int main() {
 
   // Variavel que irá armazenar o numero de amostras de cada arquivo
-  int fileSamplesQtd = 0;
   
   // Para instâncias de arrays de tamanhos: 100, 1000, 10000
   SortMethods inputs;
@@ -25,7 +24,8 @@ int main() {
     "./OutputFiles/10000.txt",
   };
   for (int i = 0; i < 3; i++) {
-    fileSamplesQtd = inputs.setQtdOfSamples(inputFileNames[i]);
+    int fileSamplesQtd = inputs.setQtdOfSamples(inputFileNames[i]);
+    cout << fileSamplesQtd << endl;
     inputs.readFile(inputFileNames[i], fileSamplesQtd);
     inputs.sort();
     outputs.writeOnFile(outputFileNames[i], fileSamplesQtd);
