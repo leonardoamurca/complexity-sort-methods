@@ -169,12 +169,11 @@ void SortMethods::selectionSort(int arr[], int size, int i) {
     for (int j = 1; j <= k; j++) {
       comparisons++;
       if (arr[j] < arr[first])
-        // movimentations++;
         first = j;
     }
     movimentations++;
     temp = arr[first]; 
-    movimentations++;  // Swap smallest found with element in position i.
+    movimentations++;
     arr[first] = arr[k];
     movimentations++;
     arr[k] = temp;

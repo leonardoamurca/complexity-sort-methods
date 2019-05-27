@@ -1,5 +1,5 @@
 # Complexity Sort Methods
-Analysis and Reporting of the complexity of the following sorting methods: BubbleSort, InsertSort, SelectSort, ShellSort, QuickSort, and HeapSort.
+Analysis and Reporting of the complexity of the following sorting methods: BubbleSort, InsertSort, SelectionSort, ShellSort, QuickSort, and HeapSort.
 
 This project counts the number of: movimentations, comparisons and runtime of each of the sorting algorithms mentioned above.
 
@@ -41,4 +41,27 @@ This project counts the number of: movimentations, comparisons and runtime of ea
     movimentations++;
     arr[j + 1] = key;  
   }  
+```
+
+## Selection Sort
+
+```cpp
+  int comparisons = 0; // Counter for number of comparissons
+  int movimentations = 0; // Counter for number of movimentations
+
+  int first, temp;
+  for (int k = size - 1; k > 0; k--) {
+    first = 0;
+    for (int j = 1; j <= k; j++) {
+      comparisons++;
+      if (arr[j] < arr[first])
+        first = j;
+    }
+    movimentations++;
+    temp = arr[first]; 
+    movimentations++;
+    arr[first] = arr[k];
+    movimentations++;
+    arr[k] = temp;
+  }
 ```
