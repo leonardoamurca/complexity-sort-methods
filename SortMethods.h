@@ -24,6 +24,7 @@ class SortMethods {
     void bubbleSort(int arr[], int size, int i);
     void insertionSort(int arr[], int size, int i);
     void selectionSort(int arr[], int size, int i);
+    void shellSort(int arr[], int size, int i);
     double runtime(clock_t tStart);
 
   private:
@@ -183,6 +184,29 @@ void SortMethods::selectionSort(int arr[], int size, int i) {
   output[i].setMovimentationsQtd(movimentations);
 }
 
+void SortMethods::shellSort(int arr[], int size, int i) {
+  clock_t tStart = clock();
+  long int comparisons = 0;
+  long int movimentations = 0;
+
+  for (int gap = size/2; gap > 0; gap /= 2) { 
+    for (int i = gap; i < size; i++) { 
+      int temp = arr[i]; 
+      int j;
+      comparisons++;             
+      for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+        movimentations++;
+        arr[j] = arr[j - gap]; 
+      }
+      movimentations++;    
+      arr[j] = temp; 
+    } 
+  } 
+  output[i].setRuntime(runtime(tStart));
+  output[i].setComparisonsQtd(comparisons);
+  output[i].setMovimentationsQtd(movimentations);
+}
+
 
 
 void SortMethods::sort() {
@@ -196,6 +220,8 @@ void SortMethods::sort() {
       insertionSort(input[i].array, input[i].arraySize, i);
     } else if (input[i].sortMethod == "Selection") { 
       selectionSort(input[i].array, input[i].arraySize, i);
+    } else if (input[i].sortMethod == "Shell") {
+      shellSort(input[i].array, input[i].arraySize, i);
     }
     //printSortedArray(i);  
   }
