@@ -25,6 +25,8 @@ This project counts the number of: movimentations, comparisons and runtime of ea
 ## Insertion Sort
 
 ```cpp
+  int comparisons = 0; // Counter for number of comparissons
+  int movimentations = 0; // Counter for number of movimentations
   int key, j;  
   for (int k = 1; k < size; k++) {  
     movimentations++;
