@@ -43,12 +43,11 @@ void InputData::setSortMethod(string method) {
 
 void InputData::setArrayOrdA(int arr[], int size) {
   array = new int[size];
-  array = randomArray(1, 100, size);
+  array = randomArray(1, size, size);
 }
 
 void InputData::setArrayOrdC(int arr[], int size) {
   array = new int[size];
-
   for (int i = 0; i < size; i++) {
     array[i] = i;
   }

@@ -146,8 +146,8 @@ void SortMethods::sort() {
 }
 
 void SortMethods::printOriginalArray(int i) {
-  //cout << "\n Array original: ";
-  //input[i].printArray();
+  cout << "\n Array original: ";
+  input[i].printArray();
 }
 
 void SortMethods::printSortedArray(int i) {
