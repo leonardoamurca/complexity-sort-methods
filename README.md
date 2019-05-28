@@ -87,7 +87,7 @@ void quickSort(int arr[], int l, int h) {
   }
 }
 
-partition(int arr[], int l, int h, long int &c, long int &m)  { 
+int partition(int arr[], int l, int h, long int &c, long int &m)  { 
   int x = arr[h]; 
   int i = (l - 1); 
   int aux;
@@ -109,7 +109,7 @@ partition(int arr[], int l, int h, long int &c, long int &m)  {
   arr[i+1] = arr[h];
   m++;
   arr[h] = aux;
-  
+
   return (i + 1); 
 } 
 ```
