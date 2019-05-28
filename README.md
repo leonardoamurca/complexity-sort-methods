@@ -5,9 +5,6 @@ This project counts the number of: movimentations, comparisons and runtime of ea
 
 ## Bubble Sort
 ```cpp 
-  int comparisons = 0; // Counter for number of comparissons
-  int movimentations = 0; // Counter for number of movimentations
-  int aux;
   for (int j = 0; j < size-1; j++) {
     for (int k = 0; k < size-j-1; k++) {
       comparisons++; 
@@ -25,9 +22,6 @@ This project counts the number of: movimentations, comparisons and runtime of ea
 ## Insertion Sort
 
 ```cpp
-  int comparisons = 0; // Counter for number of comparissons
-  int movimentations = 0; // Counter for number of movimentations
-  int key, j;  
   for (int k = 1; k < size; k++) {  
     movimentations++;
     key = arr[k];  
@@ -46,9 +40,6 @@ This project counts the number of: movimentations, comparisons and runtime of ea
 ## Selection Sort
 
 ```cpp
-  int comparisons = 0; // Counter for number of comparissons
-  int movimentations = 0; // Counter for number of movimentations
-
   int first, temp;
   for (int k = size - 1; k > 0; k--) {
     first = 0;
@@ -69,8 +60,6 @@ This project counts the number of: movimentations, comparisons and runtime of ea
 ## Shell Sort
 
 ```cpp
-  int comparisons = 0; // Counter for number of comparissons
-  int movimentations = 0; // Counter for number of movimentations
   for (int gap = size/2; gap > 0; gap /= 2) { 
     for (int i = gap; i < size; i++) { 
       int temp = arr[i]; 
