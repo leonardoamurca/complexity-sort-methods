@@ -74,3 +74,42 @@ This project counts the number of: movimentations, comparisons and runtime of ea
     } 
   } 
 ```
+
+## Quick Sort
+```cpp
+void quickSort(int arr[], int l, int h) {
+  comparisons++;
+  if (l < h) { 
+    /* Partitioning index */
+    int p = partition(arr, l, h, comparisons, movimentations); 
+    quickSort(arr, l, p - 1); 
+    quickSort(arr, p + 1, h); 
+  }
+}
+
+partition(int arr[], int l, int h, long int &c, long int &m)  { 
+  int x = arr[h]; 
+  int i = (l - 1); 
+  int aux;
+  for (int j = l; j <= h - 1; j++) { 
+    c++;
+    if (arr[j] <= x) { 
+      i++; 
+      m++;
+      aux = arr[i];
+      m++;
+      arr[i] = arr[j];
+      m++;
+      arr[j] = aux; 
+    } 
+  } 
+  m++;
+  aux = arr[i+1];
+  m++;
+  arr[i+1] = arr[h];
+  m++;
+  arr[h] = aux;
+  
+  return (i + 1); 
+} 
+```
