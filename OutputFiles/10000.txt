@@ -1,72 +1,72 @@
 Sort Method: Bubble
 Array Type: OrdC
-Runtime: 151.621 ms
+Runtime: 149.443 ms
 Comparisons: 49995000
 Movimentations: 0
  
 Sort Method: Bubble
 Array Type: OrdA
-Runtime: 318.239 ms
+Runtime: 316.646 ms
 Comparisons: 49995000
-Movimentations: 75090315
+Movimentations: 75738066
  
 Sort Method: Bubble
 Array Type: OrdD
-Runtime: 314.599 ms
+Runtime: 323.957 ms
 Comparisons: 49995000
 Movimentations: 149985000
  
 Sort Method: Bubble
 Array Type: OrdP
-Runtime: 152.903 ms
+Runtime: 152.861 ms
 Comparisons: 49995000
-Movimentations: 723609
+Movimentations: 726075
  
 Sort Method: Insertion
 Array Type: OrdC
-Runtime: 0.05 ms
+Runtime: 0.047 ms
 Comparisons: 9999
 Movimentations: 19998
  
 Sort Method: Insertion
 Array Type: OrdA
-Runtime: 78.923 ms
+Runtime: 75.936 ms
 Comparisons: 9999
-Movimentations: 24913477
+Movimentations: 25047552
  
 Sort Method: Insertion
 Array Type: OrdD
-Runtime: 152.109 ms
+Runtime: 152.422 ms
 Comparisons: 9999
 Movimentations: 50014998
  
 Sort Method: Insertion
 Array Type: OrdP
-Runtime: 0.817 ms
+Runtime: 0.813 ms
 Comparisons: 9999
-Movimentations: 270236
+Movimentations: 266397
  
 Sort Method: Selection
 Array Type: OrdC
-Runtime: 135.698 ms
+Runtime: 136.572 ms
 Comparisons: 49995000
 Movimentations: 29997
  
 Sort Method: Selection
 Array Type: OrdA
-Runtime: 127.369 ms
+Runtime: 127.953 ms
 Comparisons: 49995000
 Movimentations: 29997
  
 Sort Method: Selection
 Array Type: OrdD
-Runtime: 145.59 ms
+Runtime: 155.161 ms
 Comparisons: 49995000
 Movimentations: 29997
  
 Sort Method: Selection
 Array Type: OrdP
-Runtime: 135.536 ms
+Runtime: 139.829 ms
 Comparisons: 49995000
 Movimentations: 29997
  
@@ -78,43 +78,43 @@ Movimentations: 120005
  
 Sort Method: Shell
 Array Type: OrdA
-Runtime: 2.048 ms
+Runtime: 2.106 ms
 Comparisons: 240010
-Movimentations: 258231
+Movimentations: 263720
  
 Sort Method: Shell
 Array Type: OrdD
-Runtime: 0.774 ms
+Runtime: 0.767 ms
 Comparisons: 240010
 Movimentations: 182565
  
 Sort Method: Shell
 Array Type: OrdP
-Runtime: 0.649 ms
+Runtime: 0.648 ms
 Comparisons: 240010
-Movimentations: 125807
+Movimentations: 126054
  
 Sort Method: Shell
 Array Type: OrdC
-Runtime: 0.569 ms
+Runtime: 0.566 ms
 Comparisons: 240010
 Movimentations: 120005
  
 Sort Method: Quick
 Array Type: OrdA
-Runtime: 0 ms
-Comparisons: 0
-Movimentations: 0
+Runtime: 5.871 ms
+Comparisons: 22384
+Movimentations: 30000
  
 Sort Method: Quick
 Array Type: OrdD
-Runtime: 0.001 ms
-Comparisons: 0
-Movimentations: 0
+Runtime: 275.044 ms
+Comparisons: 20000
+Movimentations: 30000
  
 Sort Method: Quick
 Array Type: OrdP
-Runtime: 0.001 ms
-Comparisons: 0
-Movimentations: 0
+Runtime: 387.615 ms
+Comparisons: 10001
+Movimentations: 30000
  

@@ -21,12 +21,12 @@ class SortMethods {
     int setQtdOfSamples(string fileName);
     void printOriginalArray(int i);
     void printSortedArray(int i); 
-    void bubbleSort(int arr[], int size, int i);
-    void insertionSort(int arr[], int size, int i);
-    void selectionSort(int arr[], int size, int i);
-    void shellSort(int arr[], int size, int i);
-    void quickSort(int arr[], int l, int h, int i);
-    int partition(int arr[], int l, int h) ;
+    void bubbleSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart);
+    void insertionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart);
+    void selectionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart);
+    void shellSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart);
+    void quickSort(int arr[], int l, int h, int i, long int comparisons, long int movimentations, clock_t tStart);
+    int partition(int arr[], int l, int h, long int &c, long int &m) ;
     double runtime(clock_t tStart);
 
   private:
@@ -113,10 +113,7 @@ void SortMethods::generateArray(int i, int size, string type) {
   }
 }
 
-void SortMethods::bubbleSort(int arr[], int size, int i) {
-  clock_t tStart = clock();
-  long int comparisons = 0;
-  long int movimentations = 0;
+void SortMethods::bubbleSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
   int aux;
   for (int j = 0; j < size-1; j++) {
     for (int k = 0; k < size-j-1; k++) {
@@ -136,11 +133,7 @@ void SortMethods::bubbleSort(int arr[], int size, int i) {
   output[i].setMovimentationsQtd(movimentations);
 }
 
-void SortMethods::insertionSort(int arr[], int size, int i) {
-  clock_t tStart = clock();
-  long int comparisons = 0;
-  long int movimentations = 0;
-
+void SortMethods::insertionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
   int key, j;  
   for (int k = 1; k < size; k++) {  
     movimentations++;
@@ -161,11 +154,7 @@ void SortMethods::insertionSort(int arr[], int size, int i) {
   output[i].setMovimentationsQtd(movimentations);
 }
 
-void SortMethods::selectionSort(int arr[], int size, int i) {
-  clock_t tStart = clock();
-  long int comparisons = 0;
-  long int movimentations = 0;
-
+void SortMethods::selectionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
   int first, temp;
   for (int k = size - 1; k > 0; k--) {
     first = 0;
@@ -186,11 +175,7 @@ void SortMethods::selectionSort(int arr[], int size, int i) {
   output[i].setMovimentationsQtd(movimentations);
 }
 
-void SortMethods::shellSort(int arr[], int size, int i) {
-  clock_t tStart = clock();
-  long int comparisons = 0;
-  long int movimentations = 0;
-
+void SortMethods::shellSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
   for (int gap = size/2; gap > 0; gap /= 2) { 
     for (int i = gap; i < size; i++) { 
       int temp = arr[i]; 
@@ -209,15 +194,13 @@ void SortMethods::shellSort(int arr[], int size, int i) {
   output[i].setMovimentationsQtd(movimentations);
 }
 
-void SortMethods::quickSort(int arr[], int l, int h, int i) { 
-  clock_t tStart = clock();
-  long int comparisons = 0;
-  long int movimentations = 0;
+void SortMethods::quickSort(int arr[], int l, int h, int i, long int comparisons, long int movimentations, clock_t tStart) { 
+  comparisons++;
   if (l < h) { 
     /* Partitioning index */
-    int p = partition(arr, l, h); 
-    quickSort(arr, l, p - 1, i); 
-    quickSort(arr, p + 1, h, i); 
+    int p = partition(arr, l, h, comparisons, movimentations); 
+    quickSort(arr, l, p - 1, i, comparisons, movimentations, tStart); 
+    quickSort(arr, p + 1, h, i, comparisons, movimentations, tStart); 
   } else {
     // printSortedArray(i);  
   output[i].setRuntime(runtime(tStart));
@@ -229,21 +212,37 @@ void SortMethods::quickSort(int arr[], int l, int h, int i) {
 
 
 
-void SortMethods::sort() {
+void SortMethods::sort() {      
   for (int i = 0; i < qtdOfSamples; i++) {
+    clock_t tStart;
+    long int comparisons;
+    long int movimentations;
     generateArray(i, input[i].arraySize, input[i].arrayType);
-    //printOriginalArray(i);
-
     if (input[i].sortMethod == "Bubble") {
-      bubbleSort(input[i].array, input[i].arraySize, i);
+      tStart = clock();
+      comparisons = 0;
+      movimentations = 0;
+      bubbleSort(input[i].array, input[i].arraySize, i, comparisons, movimentations, tStart);
     } else if (input[i].sortMethod == "Insertion") {
-      insertionSort(input[i].array, input[i].arraySize, i);
+      tStart = clock();
+      comparisons = 0;
+      movimentations = 0;
+      insertionSort(input[i].array, input[i].arraySize, i, comparisons, movimentations, tStart);
     } else if (input[i].sortMethod == "Selection") { 
-      selectionSort(input[i].array, input[i].arraySize, i);
+      tStart = clock();
+      comparisons = 0;
+      movimentations = 0;
+      selectionSort(input[i].array, input[i].arraySize, i, comparisons, movimentations, tStart);
     } else if (input[i].sortMethod == "Shell") {
-      shellSort(input[i].array, input[i].arraySize, i);
+      tStart = clock();
+      comparisons = 0;
+      movimentations = 0;
+      shellSort(input[i].array, input[i].arraySize, i, comparisons, movimentations, tStart);
     } else if (input[i].sortMethod == "Quick") {
-      quickSort(input[i].array, 0, input[i].arraySize - 1, i);
+      tStart = clock();
+      comparisons = 0;
+      movimentations = 0;
+      quickSort(input[i].array, 0, input[i].arraySize - 1, i, comparisons, movimentations, tStart);
     }
   }
 }
@@ -266,21 +265,28 @@ double SortMethods::runtime(clock_t tStart) {
   return (double) (clock() - tStart)/1000; // Tempo de relogio (em ms)
 }
 
-int SortMethods::partition(int arr[], int l, int h)  { 
+int SortMethods::partition(int arr[], int l, int h, long int &c, long int &m)  { 
   int x = arr[h]; 
   int i = (l - 1); 
-  int aux, xua;
+  int aux;
   for (int j = l; j <= h - 1; j++) { 
+    c++;
     if (arr[j] <= x) { 
       i++; 
+      m++;
       aux = arr[i];
+      m++;
       arr[i] = arr[j];
+      m++;
       arr[j] = aux; 
     } 
   } 
-  xua = arr[i+1];
+  m++;
+  aux = arr[i+1];
+  m++;
   arr[i+1] = arr[h];
-  arr[h] = xua;
+  m++;
+  arr[h] = aux;
   return (i + 1); 
 } 
 
