@@ -25,6 +25,8 @@ class SortMethods {
     void insertionSort(int arr[], int size, int i);
     void selectionSort(int arr[], int size, int i);
     void shellSort(int arr[], int size, int i);
+    void quickSort(int arr[], int l, int h, int i);
+    int partition(int arr[], int l, int h) ;
     double runtime(clock_t tStart);
 
   private:
@@ -207,6 +209,24 @@ void SortMethods::shellSort(int arr[], int size, int i) {
   output[i].setMovimentationsQtd(movimentations);
 }
 
+void SortMethods::quickSort(int arr[], int l, int h, int i) { 
+  clock_t tStart = clock();
+  long int comparisons = 0;
+  long int movimentations = 0;
+  if (l < h) { 
+    /* Partitioning index */
+    int p = partition(arr, l, h); 
+    quickSort(arr, l, p - 1, i); 
+    quickSort(arr, p + 1, h, i); 
+  } else {
+    // printSortedArray(i);  
+  output[i].setRuntime(runtime(tStart));
+  output[i].setComparisonsQtd(comparisons);
+  output[i].setMovimentationsQtd(movimentations);
+  } 
+} 
+  
+
 
 
 void SortMethods::sort() {
@@ -222,8 +242,9 @@ void SortMethods::sort() {
       selectionSort(input[i].array, input[i].arraySize, i);
     } else if (input[i].sortMethod == "Shell") {
       shellSort(input[i].array, input[i].arraySize, i);
+    } else if (input[i].sortMethod == "Quick") {
+      quickSort(input[i].array, 0, input[i].arraySize - 1, i);
     }
-    //printSortedArray(i);  
   }
 }
 
@@ -244,5 +265,23 @@ void SortMethods::printSortedArray(int i) {
 double SortMethods::runtime(clock_t tStart) {
   return (double) (clock() - tStart)/1000; // Tempo de relogio (em ms)
 }
+
+int SortMethods::partition(int arr[], int l, int h)  { 
+  int x = arr[h]; 
+  int i = (l - 1); 
+  int aux, xua;
+  for (int j = l; j <= h - 1; j++) { 
+    if (arr[j] <= x) { 
+      i++; 
+      aux = arr[i];
+      arr[i] = arr[j];
+      arr[j] = aux; 
+    } 
+  } 
+  xua = arr[i+1];
+  arr[i+1] = arr[h];
+  arr[h] = xua;
+  return (i + 1); 
+} 
 
 #endif
