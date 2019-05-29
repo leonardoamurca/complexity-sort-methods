@@ -16,10 +16,10 @@ class InputData {
     void setArrayType(string type);
     void setArraySize(int size);
     void setSortMethod(string method);
-    void setArrayOrdA(int arr[], int size);
-    void setArrayOrdC(int arr[], int size);
-    void setArrayOrdD(int arr[], int size);
-    void setArrayOrdP(int arr[], int size);
+    void setArrayOrdA(int size);
+    void setArrayOrdC(int size);
+    void setArrayOrdD(int size);
+    void setArrayOrdP(int size);
     void printArray();
 
     int arraySize; // Tamanho do vetor
@@ -41,19 +41,19 @@ void InputData::setSortMethod(string method) {
   sortMethod = method;
 }
 
-void InputData::setArrayOrdA(int arr[], int size) {
+void InputData::setArrayOrdA(int size) {
   array = new int[size];
   array = randomArray(1, size, size);
 }
 
-void InputData::setArrayOrdC(int arr[], int size) {
+void InputData::setArrayOrdC(int size) {
   array = new int[size];
   for (int i = 0; i < size; i++) {
     array[i] = i;
   }
 }
 
-void InputData::setArrayOrdD(int arr[], int size) {
+void InputData::setArrayOrdD(int size) {
   array = new int[size];
   int j = 0;
   for (int i = size; i > 0; i--) {
@@ -62,7 +62,7 @@ void InputData::setArrayOrdD(int arr[], int size) {
   }
 }
 
-void InputData::setArrayOrdP(int arr[], int size) {
+void InputData::setArrayOrdP(int size) {
   array = new int[size];
   for (int i = 0; i < size; i++) {
     i < floor(size*0.1) 

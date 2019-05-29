@@ -97,17 +97,14 @@ void SortMethods::readFile(string fileName, int fileSamplesQtd) {
 }
 
 void SortMethods::generateArray(int i, int size, string type) {
-  int arraySize = input[i].arraySize;
-  int *arr = new int[arraySize];
-
   if (type == "OrdC") {
-    input[i].setArrayOrdC(arr, arraySize);
+    input[i].setArrayOrdC(size);
   } else if (type == "OrdA")  {
-    input[i].setArrayOrdA(arr, arraySize);
+    input[i].setArrayOrdA(size);
   } else if (type == "OrdD") {
-    input[i].setArrayOrdD(arr, arraySize);
+    input[i].setArrayOrdD(size);
   } else if (type == "OrdP") {
-    input[i].setArrayOrdP(arr, arraySize);
+    input[i].setArrayOrdP(size);
   } else {
     cout << "Erro ao gerar o vetor!" << endl;
   }
