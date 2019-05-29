@@ -1,0 +1,6 @@
+Sort Method: Selection
+Array Type: OrdP
+Runtime: 13577.5 ms
+Comparisons: 4999950000
+Movimentations: 299997
+ 

@@ -1,1 +1,120 @@
-Sort Method: 
+Sort Method: Bubble
+Array Type: OrdC
+Runtime: 4.078 ms
+Comparisons: 499500
+Movimentations: 0
+ 
+Sort Method: Bubble
+Array Type: OrdA
+Runtime: 4.765 ms
+Comparisons: 499500
+Movimentations: 764463
+ 
+Sort Method: Bubble
+Array Type: OrdD
+Runtime: 3.364 ms
+Comparisons: 499500
+Movimentations: 1498500
+ 
+Sort Method: Bubble
+Array Type: OrdP
+Runtime: 1.984 ms
+Comparisons: 499500
+Movimentations: 7005
+ 
+Sort Method: Insertion
+Array Type: OrdC
+Runtime: 1.719 ms
+Comparisons: 499500
+Movimentations: 2997
+ 
+Sort Method: Insertion
+Array Type: OrdA
+Runtime: 1.483 ms
+Comparisons: 499500
+Movimentations: 2997
+ 
+Sort Method: Insertion
+Array Type: OrdD
+Runtime: 1.524 ms
+Comparisons: 499500
+Movimentations: 2997
+ 
+Sort Method: Insertion
+Array Type: OrdP
+Runtime: 1.36 ms
+Comparisons: 499500
+Movimentations: 2997
+ 
+Sort Method: Selection
+Array Type: OrdC
+Runtime: 0.005 ms
+Comparisons: 999
+Movimentations: 1998
+ 
+Sort Method: Selection
+Array Type: OrdA
+Runtime: 0.755 ms
+Comparisons: 999
+Movimentations: 246622
+ 
+Sort Method: Selection
+Array Type: OrdD
+Runtime: 1.527 ms
+Comparisons: 999
+Movimentations: 501498
+ 
+Sort Method: Selection
+Array Type: OrdP
+Runtime: 0.013 ms
+Comparisons: 999
+Movimentations: 4334
+ 
+Sort Method: Shell
+Array Type: OrdC
+Runtime: 0.038 ms
+Comparisons: 16012
+Movimentations: 8006
+ 
+Sort Method: Shell
+Array Type: OrdA
+Runtime: 0.135 ms
+Comparisons: 16012
+Movimentations: 15625
+ 
+Sort Method: Shell
+Array Type: OrdD
+Runtime: 0.056 ms
+Comparisons: 16012
+Movimentations: 12706
+ 
+Sort Method: Shell
+Array Type: OrdP
+Runtime: 0.043 ms
+Comparisons: 16012
+Movimentations: 8311
+ 
+Sort Method: Quick
+Array Type: OrdC
+Runtime: 4.507 ms
+Comparisons: 1001
+Movimentations: 3000
+ 
+Sort Method: Quick
+Array Type: OrdA
+Runtime: 0.557 ms
+Comparisons: 1168
+Movimentations: 3000
+ 
+Sort Method: Quick
+Array Type: OrdD
+Runtime: 3.368 ms
+Comparisons: 2000
+Movimentations: 3000
+ 
+Sort Method: Quick
+Array Type: OrdP
+Runtime: 4.408 ms
+Comparisons: 1001
+Movimentations: 3000
+ 

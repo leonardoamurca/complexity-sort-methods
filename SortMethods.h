@@ -130,7 +130,7 @@ void SortMethods::bubbleSort(int arr[], int size, int i, long int comparisons, l
   output[i].setMovimentationsQtd(movimentations);
 }
 
-void SortMethods::insertionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
+void SortMethods::selectionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
   int key, j;  
   for (int k = 1; k < size; k++) {  
     movimentations++;
@@ -151,7 +151,7 @@ void SortMethods::insertionSort(int arr[], int size, int i, long int comparisons
   output[i].setMovimentationsQtd(movimentations);
 }
 
-void SortMethods::selectionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
+void SortMethods::insertionSort(int arr[], int size, int i, long int comparisons, long int movimentations, clock_t tStart) {
   int first, temp;
   for (int k = size - 1; k > 0; k--) {
     first = 0;
